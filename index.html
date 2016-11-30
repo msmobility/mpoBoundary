@@ -26,11 +26,12 @@ var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v9',
     center: [-84.44403686523438, 33.81908916394128],
-    zoom: 8
+    zoom: 8,
+    pitch: 30
 });
 
 map.on('load', function () {
-    // Add a GeoJSON source containing the state polygons.
+    // Add a GeoJSON source containing the county polygons.
     map.addSource('mpoCounties', {
         'type': 'geojson',
         'data': 'https://opendata.arcgis.com/datasets/53ca7db14b8f4a9193c1883247886459_67.geojson'
@@ -42,62 +43,271 @@ map.on('load', function () {
         'type': 'fill',
         'source': 'mpoCounties',
         'paint': {
-            'fill-color': 'rgba(223,223,237,0.3)',
+            'fill-color': 'rgba(223,223,237,0.0)',
             'fill-outline-color': 'lightgrey'
         }
     });
 
  //     Add a layer showing the state polygons.
     map.addLayer({
-        'id': 'lowpop',
+        'id': 'barrow',
         'type': 'fill',
         'source': 'mpoCounties',
         // 'interactive': true,
         'paint': {
-            'fill-color': '#E2C834',
+            'fill-color': '#589182',
             'fill-opacity': 0.7,
         },
         'filter': [
-            '<=', 'totpop10', 69367
+            '==', 'NAME10', 'Barrow'
         ]
     });
 
-
-map.addLayer({
-        'id': 'threepop',
-        'type': 'fill',
-        'source': 'mpoCounties',
-        // 'interactive': true,
-        'paint': {
-            'fill-color': '#1B9AAA',
-            'fill-opacity': 0.7,
-        },
-        'filter': ['all',['>', 'totpop10', 69367], ['<=', 'totpop10', 250000]]
-    });
-
-map.addLayer({
-        'id': 'fourpop',
-        'type': 'fill',
-        'source': 'mpoCounties',
-        // 'interactive': true,
-        'paint': {
-            'fill-color': '#06D6A0 ',
-            'fill-opacity': 0.7,
-        },
-        'filter': ['all',['>', 'totpop10', 250000], ['<=', 'totpop10', 799999]]
-    });
-
     map.addLayer({
-        'id': 'highpop',
+        'id': 'carroll',
         'type': 'fill',
         'source': 'mpoCounties',
         // 'interactive': true,
         'paint': {
-            'fill-color': '#EF476F',
+            'fill-color': '#589182',
             'fill-opacity': 0.7,
         },
         'filter': [
-            '>=', 'totpop10', 800000
+            '==', 'NAME10', 'Carroll'
+        ]
+    });
+        map.addLayer({
+        'id': 'cherokee',
+        'type': 'fill',
+        'source': 'mpoCounties',
+        // 'interactive': true,
+        'paint': {
+            'fill-color': '#589182',
+            'fill-opacity': 0.7,
+        },
+        'filter': [
+            '==', 'NAME10', 'Cherokee'
+        ]
+    });
+        map.addLayer({
+        'id': 'clayton',
+        'type': 'fill',
+        'source': 'mpoCounties',
+        // 'interactive': true,
+        'paint': {
+            'fill-color': '#2EC19A',
+            'fill-opacity': 0.7,
+        },
+        'filter': [
+            '==', 'NAME10', 'Clayton'
+        ]
+    });
+        map.addLayer({
+        'id': 'cobb',
+        'type': 'fill',
+        'source': 'mpoCounties',
+        // 'interactive': true,
+        'paint': {
+            'fill-color': '#2EC19A',
+            'fill-opacity': 0.7,
+        },
+        'filter': [
+            '==', 'NAME10', 'Cobb'
+        ]
+    });
+        map.addLayer({
+        'id': 'coweta',
+        'type': 'fill',
+        'source': 'mpoCounties',
+        // 'interactive': true,
+        'paint': {
+            'fill-color': '#2EC19A',
+            'fill-opacity': 0.7,
+        },
+        'filter': [
+            '==', 'NAME10', 'Coweta'
+        ]
+    });
+        map.addLayer({
+        'id': 'dawson',
+        'type': 'fill',
+        'source': 'mpoCounties',
+        // 'interactive': true,
+        'paint': {
+            'fill-color': '#06D6A0',
+            'fill-opacity': 0.7,
+        },
+        'filter': [
+            '==', 'NAME10', 'Dawson'
+        ]
+    });
+        map.addLayer({
+        'id': 'dekalb',
+        'type': 'fill',
+        'source': 'mpoCounties',
+        // 'interactive': true,
+        'paint': {
+            'fill-color': '#06D6A0',
+            'fill-opacity': 0.7,
+        },
+        'filter': [
+            '==', 'NAME10', 'DeKalb'
+        ]
+    });
+        map.addLayer({
+        'id': 'douglas',
+        'type': 'fill',
+        'source': 'mpoCounties',
+        // 'interactive': true,
+        'paint': {
+            'fill-color': '#06D6A0',
+            'fill-opacity': 0.7,
+        },
+        'filter': [
+            '==', 'NAME10', 'Douglas'
+        ]
+    });
+        map.addLayer({
+        'id': 'fayette',
+        'type': 'fill',
+        'source': 'mpoCounties',
+        // 'interactive': true,
+        'paint': {
+            'fill-color': '#1CD8A6',
+            'fill-opacity': 0.7,
+        },
+        'filter': [
+            '==', 'NAME10', 'Fayette'
+        ]
+    });
+         map.addLayer({
+        'id': 'forsyth',
+        'type': 'fill',
+        'source': 'mpoCounties',
+        // 'interactive': true,
+        'paint': {
+            'fill-color': '#1CD8A6',
+            'fill-opacity': 0.7,
+        },
+        'filter': [
+            '==', 'NAME10', 'Forsyth'
+        ]
+    });
+         map.addLayer({
+        'id': 'fulton',
+        'type': 'fill',
+        'source': 'mpoCounties',
+        // 'interactive': true,
+        'paint': {
+            'fill-color': '#1CD8A6',
+            'fill-opacity': 0.7,
+        },
+        'filter': [
+            '==', 'NAME10', 'Fulton'
+        ]
+    });
+         map.addLayer({
+        'id': 'gwinnett',
+        'type': 'fill',
+        'source': 'mpoCounties',
+        // 'interactive': true,
+        'paint': {
+            'fill-color': '#47E5BB',
+            'fill-opacity': 0.7,
+        },
+        'filter': [
+            '==', 'NAME10', 'Gwinnett'
+        ]
+    });
+         map.addLayer({
+        'id': 'henry',
+        'type': 'fill',
+        'source': 'mpoCounties',
+        // 'interactive': true,
+        'paint': {
+            'fill-color': '#47E5BB',
+            'fill-opacity': 0.7,
+        },
+        'filter': [
+            '==', 'NAME10', 'Henry'
+        ]
+    });
+         map.addLayer({
+        'id': 'newton',
+        'type': 'fill',
+        'source': 'mpoCounties',
+        // 'interactive': true,
+        'paint': {
+            'fill-color': '#47E5BB',
+            'fill-opacity': 0.7,
+        },
+        'filter': [
+            '==', 'NAME10', 'Newton'
+        ]
+    });
+         map.addLayer({
+        'id': 'paulding',
+        'type': 'fill',
+        'source': 'mpoCounties',
+        // 'interactive': true,
+        'paint': {
+            'fill-color': '#47E5BB',
+            'fill-opacity': 0.7,
+        },
+        'filter': [
+            '==', 'NAME10', 'Paulding'
+        ]
+    });
+         map.addLayer({
+        'id': 'pike',
+        'type': 'fill',
+        'source': 'mpoCounties',
+        // 'interactive': true,
+        'paint': {
+            'fill-color': '#06D6A0',
+            'fill-opacity': 0.7,
+        },
+        'filter': [
+            '==', 'NAME10', 'Pike'
+        ]
+    });
+         map.addLayer({
+        'id': 'rockdale',
+        'type': 'fill',
+        'source': 'mpoCounties',
+        // 'interactive': true,
+        'paint': {
+            'fill-color': '#06D6A0',
+            'fill-opacity': 0.7,
+        },
+        'filter': [
+            '==', 'NAME10', 'Rockdale'
+        ]
+    });
+         map.addLayer({
+        'id': 'spalding',
+        'type': 'fill',
+        'source': 'mpoCounties',
+        // 'interactive': true,
+        'paint': {
+            'fill-color': '#589182',
+            'fill-opacity': 0.7,
+        },
+        'filter': [
+            '==', 'NAME10', 'Spalding'
+        ]
+    });
+         map.addLayer({
+        'id': 'walton',
+        'type': 'fill',
+        'source': 'mpoCounties',
+        // 'interactive': true,
+        'paint': {
+            'fill-color': '#589182',
+            'fill-opacity': 0.7,
+        },
+        'filter': [
+            '==', 'NAME10', 'Walton'
         ]
     });
 });
@@ -117,9 +327,9 @@ map.on('click', function (e) {
 
     var popup = new mapboxgl.Popup()
         .setLngLat(map.unproject(e.point))
-        .setHTML(feature.properties.NAMELSAD10 +"<br> 2010 Total population: " + feature.properties.totpop10 + "<br>" + feature.properties.url)
-        //.setHTML(feature.properties.totpop10)
-         //.setURL('<a href="http://www.google.com">Visit Google</a>"')
+        .setHTML(feature.properties.NAMELSAD10 +"<br> 2010 Total population: " + feature.properties.totpop10 + "<br>" + feature.properties.count)
+        .setHTML(feature.properties.NAMELSAD10 +"<br> 2010 Total population: " + feature.properties.totpop10 + '<br> <a href="http://77.104.152.48/~arctrpst/neighborhoodnexus/fulton-county-profile/" target="_blank">Visit the County Factsheets</a>')
+         // .setURL('<a href="http://www.google.com">Visit Google</a>"')
         .addTo(map);
 });
 
