@@ -37,16 +37,6 @@ map.on('load', function () {
         'data': 'https://opendata.arcgis.com/datasets/53ca7db14b8f4a9193c1883247886459_67.geojson'
     });
 
-    // Add a layer showing the state polygons.
-    map.addLayer({
-        'id': 'county-layer',
-        'type': 'fill',
-        'source': 'mpoCounties',
-        'paint': {
-            'fill-color': 'rgba(223,223,237,0.0)',
-            'fill-outline-color': 'lightgrey'
-        }
-    });
 
  //     Add a layer showing the state polygons.
     map.addLayer({
@@ -55,8 +45,9 @@ map.on('load', function () {
         'source': 'mpoCounties',
         // 'interactive': true,
         'paint': {
-            'fill-color': '#589182',
+            'fill-color': '#1CD8A6',
             'fill-opacity': 0.7,
+            'fill-outline-color': 'lightgrey',
         },
         'filter': [
             '==', 'NAME10', 'Barrow'
@@ -69,8 +60,9 @@ map.on('load', function () {
         'source': 'mpoCounties',
         // 'interactive': true,
         'paint': {
-            'fill-color': '#589182',
+            'fill-color': '#1CD8A6',
             'fill-opacity': 0.7,
+            'fill-outline-color': 'lightgrey',
         },
         'filter': [
             '==', 'NAME10', 'Carroll'
@@ -82,7 +74,7 @@ map.on('load', function () {
         'source': 'mpoCounties',
         // 'interactive': true,
         'paint': {
-            'fill-color': '#589182',
+            'fill-color': '#1CD8A6',
             'fill-opacity': 0.7,
         },
         'filter': [
@@ -95,7 +87,7 @@ map.on('load', function () {
         'source': 'mpoCounties',
         // 'interactive': true,
         'paint': {
-            'fill-color': '#2EC19A',
+            'fill-color': '#1CD8A6',
             'fill-opacity': 0.7,
         },
         'filter': [
@@ -108,7 +100,7 @@ map.on('load', function () {
         'source': 'mpoCounties',
         // 'interactive': true,
         'paint': {
-            'fill-color': '#2EC19A',
+            'fill-color': '#1CD8A6',
             'fill-opacity': 0.7,
         },
         'filter': [
@@ -121,7 +113,7 @@ map.on('load', function () {
         'source': 'mpoCounties',
         // 'interactive': true,
         'paint': {
-            'fill-color': '#2EC19A',
+            'fill-color': '#1CD8A6',
             'fill-opacity': 0.7,
         },
         'filter': [
@@ -134,7 +126,7 @@ map.on('load', function () {
         'source': 'mpoCounties',
         // 'interactive': true,
         'paint': {
-            'fill-color': '#06D6A0',
+            'fill-color': '#1CD8A6',
             'fill-opacity': 0.7,
         },
         'filter': [
@@ -147,7 +139,7 @@ map.on('load', function () {
         'source': 'mpoCounties',
         // 'interactive': true,
         'paint': {
-            'fill-color': '#06D6A0',
+            'fill-color': '#1CD8A6',
             'fill-opacity': 0.7,
         },
         'filter': [
@@ -160,7 +152,7 @@ map.on('load', function () {
         'source': 'mpoCounties',
         // 'interactive': true,
         'paint': {
-            'fill-color': '#06D6A0',
+            'fill-color': '#1CD8A6',
             'fill-opacity': 0.7,
         },
         'filter': [
@@ -212,7 +204,7 @@ map.on('load', function () {
         'source': 'mpoCounties',
         // 'interactive': true,
         'paint': {
-            'fill-color': '#47E5BB',
+            'fill-color': '#1CD8A6',
             'fill-opacity': 0.7,
         },
         'filter': [
@@ -225,7 +217,7 @@ map.on('load', function () {
         'source': 'mpoCounties',
         // 'interactive': true,
         'paint': {
-            'fill-color': '#47E5BB',
+            'fill-color': '#1CD8A6',
             'fill-opacity': 0.7,
         },
         'filter': [
@@ -238,7 +230,7 @@ map.on('load', function () {
         'source': 'mpoCounties',
         // 'interactive': true,
         'paint': {
-            'fill-color': '#47E5BB',
+            'fill-color': '#1CD8A6',
             'fill-opacity': 0.7,
         },
         'filter': [
@@ -251,8 +243,8 @@ map.on('load', function () {
         'source': 'mpoCounties',
         // 'interactive': true,
         'paint': {
-            'fill-color': '#47E5BB',
-            'fill-opacity': 0.7,
+            'fill-color': '#1CD8A6',
+            'fill-opacity': 0.,
         },
         'filter': [
             '==', 'NAME10', 'Paulding'
@@ -264,7 +256,7 @@ map.on('load', function () {
         'source': 'mpoCounties',
         // 'interactive': true,
         'paint': {
-            'fill-color': '#06D6A0',
+            'fill-color': '#1CD8A6',
             'fill-opacity': 0.7,
         },
         'filter': [
@@ -277,7 +269,7 @@ map.on('load', function () {
         'source': 'mpoCounties',
         // 'interactive': true,
         'paint': {
-            'fill-color': '#06D6A0',
+            'fill-color': '#1CD8A6',
             'fill-opacity': 0.7,
         },
         'filter': [
@@ -290,8 +282,8 @@ map.on('load', function () {
         'source': 'mpoCounties',
         // 'interactive': true,
         'paint': {
-            'fill-color': '#589182',
-            'fill-opacity': 0.7,
+            'fill-color': '#1CD8A6',
+            'fill-opacity': 0.8,
         },
         'filter': [
             '==', 'NAME10', 'Spalding'
@@ -303,13 +295,24 @@ map.on('load', function () {
         'source': 'mpoCounties',
         // 'interactive': true,
         'paint': {
-            'fill-color': '#589182',
+            'fill-color': '#1CD8A6',
             'fill-opacity': 0.7,
         },
         'filter': [
             '==', 'NAME10', 'Walton'
         ]
     });
+             // Add a layer showing the state polygons.
+    map.addLayer({
+        'id': 'county-layer',
+        'type': 'fill',
+        'source': 'mpoCounties',
+        'paint': {
+            'fill-color': 'rgba(223,223,237,0.0)',
+            'fill-outline-color': '#DDFFF6',
+        }
+    });
+
 });
 
 
