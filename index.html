@@ -333,7 +333,7 @@ map.on('click', function (e) {
     var popup = new mapboxgl.Popup()
         .setLngLat(map.unproject(e.point))
         .setHTML(feature.properties.NAMELSAD10 +"<br> 2010 Total population: " + feature.properties.totpop10 + "<br>" + feature.properties.count)
-        .setHTML(feature.properties.NAMELSAD10 +"<br> 2010 Total population: " + feature.properties.totpop10 + '<br> <a href="http://77.104.152.48/~arctrpst/neighborhoodnexus/fulton-county-profile/" target="_blank">Visit the County Factsheets</a>')
+        .setHTML(feature.properties.NAMELSAD10 +"<br> 2010 Total population: " + feature.properties.totpop10 + '<br> <a href="http://77.104.152.48/~arctrpst/neighborhoodnexus/fulton-county-profile/" target="_blank">Visit the County Profile</a>')
          // .setURL('<a href="http://www.google.com">Visit Google</a>"')
         .addTo(map);
 });
