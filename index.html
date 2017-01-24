@@ -32,30 +32,6 @@
     </style>
     <div id='map'></div>
     <script>
-
-    // var linkData = [
-    // {"COUNTYFP10": "013", "Name": 'Barrow', "URL":'http://77.104.152.48/~arctrpst/neighborhoodnexus/maps-and-data/profiles/county-profiles/barrow-county-profile/'},
-    // {"COUNTYFP10": "015", "Name": 'Bartow', "URL":'http://77.104.152.48/~arctrpst/neighborhoodnexus/maps-and-data/profiles/county-profiles/bartow-county-profile/'},
-    // {"COUNTYFP10": "045", "Name": 'Carroll', "URL":'http://77.104.152.48/~arctrpst/neighborhoodnexus/maps-and-data/profiles/county-profiles/Carroll-county-profile/'},
-    // {"COUNTYFP10": "057", "Name": 'Cherokee', "URL":'http://77.104.152.48/~arctrpst/neighborhoodnexus/maps-and-data/profiles/county-profiles/Cherokee-county-profile/'},
-    // {"COUNTYFP10": "063", "Name": 'Clayton', "URL":'http://77.104.152.48/~arctrpst/neighborhoodnexus/maps-and-data/profiles/county-profiles/Clayton-county-profile/'},
-    // {"COUNTYFP10": "067", "Name": 'Cobb', "URL":'http://77.104.152.48/~arctrpst/neighborhoodnexus/maps-and-data/profiles/county-profiles/Cobb-county-profile/'},
-    // {"COUNTYFP10": "077", "Name": 'Coweta', "URL":'http://77.104.152.48/~arctrpst/neighborhoodnexus/maps-and-data/profiles/county-profiles/Coweta-county-profile/'},
-    // {"COUNTYFP10": "089", "Name": 'DeKalb', "URL":'http://77.104.152.48/~arctrpst/neighborhoodnexus/maps-and-data/profiles/county-profiles/DeKalb-county-profile/'},
-    // {"COUNTYFP10": "097", "Name": 'Douglas', "URL":'http://77.104.152.48/~arctrpst/neighborhoodnexus/maps-and-data/profiles/county-profiles/Douglas-county-profile/'},
-    // {"COUNTYFP10":"113", "Name": 'Fayette', "URL": 'http://77.104.152.48/~arctrpst/neighborhoodnexus/maps-and-data/profiles/county-profiles/Fayette-county-profile/'},
-    // {"COUNTYFP10": "117", "Name": 'Forsyth', "URL":'http://77.104.152.48/~arctrpst/neighborhoodnexus/maps-and-data/profiles/county-profiles/Forsyth-county-profile/'},
-    // {"COUNTYFP10": "121", "Name": 'Fulton', "URL":'http://77.104.152.48/~arctrpst/neighborhoodnexus/maps-and-data/profiles/county-profiles/Fulton-county-profile/'},
-    // {"COUNTYFP10": "135", "Name": 'Gwinnett', "URL":'http://77.104.152.48/~arctrpst/neighborhoodnexus/maps-and-data/profiles/county-profiles/Gwinnett-county-profile/'},
-    // {"COUNTYFP10": "139", "Name": 'Hall', "URL":'http://77.104.152.48/~arctrpst/neighborhoodnexus/maps-and-data/profiles/county-profiles/Hall-county-profile/'},
-    // {"COUNTYFP10": "151", "Name": 'Henry', "URL":'http://77.104.152.48/~arctrpst/neighborhoodnexus/maps-and-data/profiles/county-profiles/Henry-county-profile/'},
-    // {"COUNTYFP10": "217", "Name": 'Newton', "URL":'http://77.104.152.48/~arctrpst/neighborhoodnexus/maps-and-data/profiles/county-profiles/Newton-county-profile/'},
-    // {"COUNTYFP10": "223", "Name": 'Paulding', "URL":'http://77.104.152.48/~arctrpst/neighborhoodnexus/maps-and-data/profiles/county-profiles/Paulding-county-profile/'},
-    // {"COUNTYFP10":"247", "Name": 'Rockdale', "URL":'http://77.104.152.48/~arctrpst/neighborhoodnexus/maps-and-data/profiles/county-profiles/Rockdale-county-profile/'},
-    // {"COUNTYFP10": "255", "Name": 'Spalding', "URL":'http://77.104.152.48/~arctrpst/neighborhoodnexus/maps-and-data/profiles/county-profiles/spalding-county-profile/'},
-    // {"COUNTYFP10": "297", "Name": 'Walton', "URL":'http://77.104.152.48/~arctrpst/neighborhoodnexus/maps-and-data/profiles/county-profiles/Walton-county-profile/'}
-
-    // ];
     mapboxgl.accessToken = 'pk.eyJ1IjoiYXRscmVnaW9uYWwiLCJhIjoiQmZ6d2tyMCJ9.oENm3NSf--qHrimdm9Vvdw';
     var map = new mapboxgl.Map({
         container: 'map',
@@ -404,7 +380,7 @@
         var popup = new mapboxgl.Popup()
             .setLngLat(map.unproject(e.point))
             // .setHTML(feature.properties.NAMELSAD10 + "<br> 2010 Total population: " + feature.properties.totpop10 + "<br>" + feature.properties.count)
-            .setHTML(feature.properties.NAMELSAD10  + '<br> <a href="' +feature.properties.Link +'"target="_blank">Visit the County Profile</a>')
+            .setHTML(feature.properties.NAMELSAD10  + '<br> <a href="' +feature.properties.Link +'">Visit the County Profile</a>')
             // .setURL('<a href="http://www.google.com">Visit Google</a>"')
             .addTo(map);
     });
